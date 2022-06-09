@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Project</title>
+</head>
+
+<body>
+    <p id="time">Time</p>
+    <script type="text/javascript">
+        var time = document.getElementById("time");
+
+        setInterval(displayTime, 1000);
+        function displayTime() {
+            var now = new Date();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            var apm = "AM";
+            if (hour === 0) {
+                hour = 12;
+            };
+            if (hour > 12) {
+                apm = "PM";
+            };
+            var formatHour = (hour < 10) ? "0" + hour : hour;
+            var formatMinute = (minute < 10) ? "0" + minute : minute;
+            var formatSecond = (second < 10) ? "0" + second : second;
+            time.innerHTML = "Current Time : " + formatHour + ":" + formatMinute + ": " + formatSecond + " " + apm;
+        };
+    </script>
+
+</body>
+
+</html>
